@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+#
+# Huge thanks to Narrowcast for sharing this code
+# https://github.com/narrowcast/hasdocs.com/blob/master/bin/steps/enchant
+# (original script follows)
+
 # This script serves as the Enchant build step of the
 # [**Python Buildpack**](https://github.com/heroku/heroku-buildpack-python)
 # compiler.
