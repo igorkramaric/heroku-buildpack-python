@@ -162,6 +162,9 @@ source $BIN_DIR/steps/pylibmc
 # Libffi support.
 source $BIN_DIR/steps/cryptography
 
+# Enchant support
+source $BIN_DIR/steps/enchant
+
 # Support for Geo libraries.
 sub-env $BIN_DIR/steps/geo-libs
 
