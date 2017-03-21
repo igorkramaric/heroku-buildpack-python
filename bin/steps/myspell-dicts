@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# This script copies MySpell dictionaries to site-packages/echant
+
+# The location of the pre-compiled enchant library.
+MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
+TARGET_DIR="/app/.heroku/python/lib/python2.7/site-packages/enchant/share"
+
+# If enchant exists within requirements, use vendored enchant.
+if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $BUILD_DIR/setup.py)) then
+
+  echo "-----> Noticed enchant. Copying dictionaries."
+  mkdir -p $TARGET_DIR
+
+  pushd $TARGET_DIR
+
+  # Download and extract dicts.
+  curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
+  unzip -j myspell-dicts.zip
+  rm myspell-dicts.zip
+
+  popd
+fi

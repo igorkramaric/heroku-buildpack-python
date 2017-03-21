@@ -165,6 +165,9 @@ source $BIN_DIR/steps/cryptography
 # Enchant support
 source $BIN_DIR/steps/enchant
 
+# Dictionaries for Enchant
+source $BIN_DIR/steps/myspell-dicts
+
 # Support for Geo libraries.
 sub-env $BIN_DIR/steps/geo-libs
 
