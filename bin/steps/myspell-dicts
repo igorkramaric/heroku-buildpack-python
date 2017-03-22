@@ -16,7 +16,7 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
 
   # Download and extract dicts.
   curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
-  unzip -j myspell-dicts.zip
+  unzip -j -o myspell-dicts.zip
   chmod 755 *
   rm myspell-dicts.zip
 
