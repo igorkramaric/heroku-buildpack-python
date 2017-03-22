@@ -4,7 +4,7 @@
 
 # The location of the pre-compiled enchant library.
 MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
-TARGET_DIR="/app/.heroku/python/lib/python2.7/site-packages/enchant/share"
+TARGET_DIR="/app/.heroku/python/lib/python2.7/site-packages/enchant/share/enchant/myspell"
 
 # If enchant exists within requirements, use vendored enchant.
 if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $BUILD_DIR/setup.py)) then
@@ -17,8 +17,11 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
   # Download and extract dicts.
   curl -s -L -o myspell-dicts.zip $MY_SPELL_DICTS_PATH
   unzip -j -o myspell-dicts.zip
-  chmod 755 *
+
   rm myspell-dicts.zip
+
+  chmod 644 *
+  ls -al
 
   popd
 fi
