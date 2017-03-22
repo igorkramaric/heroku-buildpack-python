@@ -20,6 +20,8 @@ VENDORED_ENCHANT="https://s3.amazonaws.com/docsome/enchant-1.6.tgz"
 # If enchant exists within requirements, use vendored enchant.
 if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $BUILD_DIR/setup.py)) then
   echo "-----> Noticed enchant. Bootstrapping enchant."
+
+  mkdir -p .heroku
   cd .heroku
 
   if [ -d "vendor/lib/enchant" ]; then
@@ -27,6 +29,9 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
   else
     # Download and extract enchant into target vendor directory.
     curl -s -L -o tmp-enchant.tgz $VENDORED_ENCHANT
+
+    mkdir -p .vendor
+
     tar -zxvf tmp-enchant.tgz -C vendor > /dev/null
     rm tmp-enchant.tgz
   fi
