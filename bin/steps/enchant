@@ -30,7 +30,7 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
     # Download and extract enchant into target vendor directory.
     curl -s -L -o tmp-enchant.tgz $VENDORED_ENCHANT
 
-    mkdir -p .vendor
+    mkdir -p vendor
 
     tar -zxvf tmp-enchant.tgz -C vendor > /dev/null
     rm tmp-enchant.tgz
