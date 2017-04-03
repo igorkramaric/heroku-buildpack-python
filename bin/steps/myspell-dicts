@@ -29,6 +29,8 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
   popd
  
   echo "-----> Copying Aspell dictionaries."
+
+  ls -al /app/.heroku
   mkdir -p $TARGET_DIR_ASPELL_DICTS
 
   pushd $TARGET_DIR_ASPELL_DICTS
