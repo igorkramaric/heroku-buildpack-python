@@ -46,4 +46,7 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
 
   popd
   echo "<----- Copied Aspell dictionaries."
+  pwd
+  cd ~
+  echo "<----- Back to home dir"
 fi
