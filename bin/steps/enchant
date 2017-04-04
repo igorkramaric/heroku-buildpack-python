@@ -8,7 +8,7 @@ tar -xvzf enchant-1.6.0.tar.gz
 echo "-----> Building enchant"
 mkdir /app/enchant
 cd enchant-1.6.0
-./configure --prefix=/app/enchant --with-aspell-prefix=/app/vendor/aspell
+./configure --prefix=/app/.heroku/vendor --with-aspell-prefix=/app/vendor/aspell
 make
 
 echo "-----> Installing enchant"
@@ -16,7 +16,7 @@ echo "-----> Installing enchant"
 make install
 
 # add to path
-export PATH=$PATH:/app/enchant/bin
+export PATH=$PATH:/app/.heroku/vendor/bin
 
 echo "-----> Enchant is here:"
 which enchant
