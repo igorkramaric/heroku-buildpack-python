@@ -7,7 +7,7 @@ MY_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/myspell.zip"
 A_SPELL_DICTS_PATH="https://analytics-p-junk.s3.amazonaws.com/aspell-dicts.zip"
 
 TARGET_DIR_ENCHANT_DICTS="/app/.heroku/python/lib/python2.7/site-packages/enchant/share/enchant/myspell"
-TARGET_DIR_ASPELL_DICTS="/app/.heroku/vendor/lib/aspell-0.60"
+TARGET_DIR_ASPELL_DICTS=$BUILD_DIR/.heroku/vendor/lib/aspell-0.60
 
 # If enchant exists within requirements, use vendored enchant.
 if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $BUILD_DIR/setup.py)) then
