@@ -33,6 +33,9 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
   ls -al /app/.heroku
   mkdir -p $TARGET_DIR_ASPELL_DICTS
 
+  pwd
+  echo "<----- Before pushed to $TARGET_DIR_ASPELL_DICTS"
+
   pushd $TARGET_DIR_ASPELL_DICTS
 
   # Download and extract dicts.
@@ -49,4 +52,5 @@ if ((grep -Fiq "enchant" $BUILD_DIR/requirements.txt) || (grep -Fiq "enchant" $B
   pwd
   cd ~
   echo "<----- Back to home dir"
+  pwd
 fi
