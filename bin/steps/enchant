@@ -2,7 +2,7 @@
 
 echo "-----> Getting enchant"
 pushd $(mktemp -d)
-curl -s -L -o enchant-1.6.0.tar.gz https://analytics-p-junk.s3.amazonaws.com/enchant-src-debug.tar.gz
+curl -s -L -o enchant-1.6.0.tar.gz https://analytics-p-junk.s3.amazonaws.com/enchant-1.6.0-source.tar.gz
 tar -xvzf enchant-1.6.0.tar.gz
 
 echo "-----> Building enchant"
@@ -12,7 +12,6 @@ cd enchant-1.6.0
 make
 
 echo "-----> Installing enchant"
-# install
 make install
 
 # add to path
