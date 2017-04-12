@@ -78,6 +78,9 @@ export LIBRARY_PATH=/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LIBRARY_PAT
 export LD_LIBRARY_PATH=/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=/app/.heroku/vendor/lib/pkg-config:/app/.heroku/python/lib/pkg-config:$PKG_CONFIG_PATH
 
+# Prepend proper environment variable for Enchant use.
+export PATH=/app/.heroku/vendor/bin:$PATH
+
 # Switch to the repo's context.
 cd $BUILD_DIR
 
