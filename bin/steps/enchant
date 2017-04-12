@@ -8,7 +8,7 @@ tar -xvzf enchant-1.6.0.tar.gz
 echo "-----> Building enchant"
 mkdir /app/enchant
 cd enchant-1.6.0
-./configure --prefix=/app/.heroku/vendor --with-aspell-prefix=/app/vendor/aspell
+./configure --prefix=/app/.heroku/vendor --with-aspell-prefix=$BUILD_DIR/vendor/aspell
 make
 
 echo "-----> Installing enchant"
