@@ -78,9 +78,6 @@ export LIBRARY_PATH=/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LIBRARY_PAT
 export LD_LIBRARY_PATH=/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=/app/.heroku/vendor/lib/pkg-config:/app/.heroku/python/lib/pkg-config:$PKG_CONFIG_PATH
 
-# Prepend proper environment variable for Enchant use.
-export PATH=/app/.heroku/vendor/bin:$PATH
-
 # Switch to the repo's context.
 cd $BUILD_DIR
 
@@ -202,6 +199,9 @@ set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LD_LIB
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
+
+# .profile script story for Enchant
+set-env PATH '$HOME/.heroku/vendor/bin:$PATH'
 
 # Install sane-default script for $WEB_CONCURRENCY and $FORWARDED_ALLOW_IPS.
 cp $ROOT_DIR/vendor/python.gunicorn.sh $GUNICORN_PROFILE_PATH
